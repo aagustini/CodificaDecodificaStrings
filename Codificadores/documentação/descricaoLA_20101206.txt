@@ -1,0 +1,29 @@
+
+Aluno: Lucas Andreotti
+Classe de Codificador: CodificaLA_20101206.java
+
+O codificador CodificaLA.java funcionará da seguinte forma:
+
+Para codificar uma string, será feita um entrelaçamento da string recebida com a sua reversa. Por exemplo, ao receber "abcde", o método "codifica" criará uma string reversa "edcba" e entrelaçará esta com a original. O entrelaçamento começa com o primeiro caracter da string original.
+
+EXEMPLO: 
+
+        Entrada: "abcde"
+        Reversa: "edcba"
+        String Codificada: "aebdccdbea"
+
+        Ajuda para o entrelaçamento:
+
+            a b c d e 
+             e d c b a
+
+A decodificação a partir da string codificada será através de um laço de repetição com passo i+=2 para ignorar os caracteres da string reversa entrelaçada na original.
+
+PSEUDO-CÓDIGO:
+
+    para i=0; i<tamanho(stringCodificada); i+=2){
+
+        stringDecodificada += caracter da stringCodificada na posição i
+    }
+
+Como mostra o pseudo código, a stringDecodificada é resultado da concatenação dos caracteres da stringCodificada. Como o passo de repetição é i+=2, os caracteres da string reversa são ignorados.
