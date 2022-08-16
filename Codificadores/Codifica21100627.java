@@ -2,7 +2,7 @@ package Codificadores;
 
 import java.util.Random;
 
-public class MeuCodificador implements Codifica{
+public class Codifica21100627 implements Codifica{
 
      @Override
      public String getNomeAutor() {
