@@ -11,6 +11,7 @@ public class Codifica21103798_1 implements Codifica {
     @Override
     public String codifica(String str) {
 
+        // Nesta etapa é modificado a String de entrada conforme as regras definidas na variável 'regras'
         char[] etapa1 = str.toCharArray();
         for(int i = 0; i < etapa1.length; i++){
             for(int j = 0; j < 42; j++){
@@ -21,8 +22,10 @@ public class Codifica21103798_1 implements Codifica {
             }
         }
 
+        // Nesta etapa é invertido a String resultante da primeira etapa
         String etapa2 = new StringBuilder(String.valueOf(etapa1)).reverse().toString();
 
+        // Por fim para cada caractere é diminuido em 1 do seu respectivo valor na tabela ascii
         char[] etapa3 = etapa2.toCharArray();
         for(int i = 0; i < etapa3.length; i++){
             etapa3[i] = (char)((int)etapa3[i]-1);
@@ -34,13 +37,16 @@ public class Codifica21103798_1 implements Codifica {
     @Override
     public String decodifica(String str) {
        
+        // Para cada caractere da String de entrada soma 1 na sua referencia da tabela ascii
         char[] etapa1 = str.toCharArray();
         for(int i = 0; i < etapa1.length; i++){
             etapa1[i] = (char)((int)etapa1[i]+1);
         }
 
+        // Inverte a String resultante da etapa 1
         String etapa2 = new StringBuilder(String.valueOf(etapa1)).reverse().toString();
 
+        // Aplica as regras da variável 'regras', ao contrário
         char[] etapa3 = etapa2.toCharArray();
         for(int i = 0; i < etapa3.length; i++){
             for(int j = 0; j < 42; j++){
