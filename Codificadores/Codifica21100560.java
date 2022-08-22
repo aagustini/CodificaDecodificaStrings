@@ -1,6 +1,6 @@
 package Codificadores;
 
-public class CodificaTabajara implements Codifica{
+public class Codifica21100560 implements Codifica{
 
     @Override
     public String getNomeAutor() {
