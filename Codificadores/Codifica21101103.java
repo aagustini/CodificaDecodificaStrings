@@ -27,7 +27,7 @@ public class Codifica21101103 implements Codifica {
                 codificada += "|" + jogadoresTimao[n] + "|";
             }else if(Character.isDigit(s)){
                 int sInt = s - '0';
-                codificada += "|" + conversaoNumeros[sInt] + "|";
+                codificada += "{" + conversaoNumeros[sInt] + "}";
             } else {
                 codificada += s;
             }
@@ -38,6 +38,13 @@ public class Codifica21101103 implements Codifica {
     @Override
     public String decodifica(String str) {
         String decodificada = "";
+        for (char s : str.toCharArray()) {
+            int ascii = (int) s;
+            if (ascii > 127) {
+                codificada += s;
+                continue;
+            }
+        }
         return decodificada;
     }
 
