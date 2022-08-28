@@ -2,15 +2,33 @@ package Codificadores;
 
 public class Codifica17103283 implements Codifica {
 
+    private static int i = (int) (Math.random() * (127 - 0)) + 0;
+
     @Override
     public String codifica(String str) {
-        return new StringBuilder(str).reverse().toString();
+
+        System.out.println("char: " + i);
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : str.toCharArray()) {
+             sb.append(c += i);
+        }
+
+        return sb.toString();
     }
 
     @Override
     public String decodifica(String str) {
-       
-        return new StringBuilder(str).reverse().toString();
+
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : str.toCharArray()) {
+            sb.append(c -= i);
+
+        }
+
+        return sb.toString();
     }
 
     @Override
