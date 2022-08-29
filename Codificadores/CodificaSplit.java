@@ -23,7 +23,9 @@ public class CodificaSplit implements Codifica {
 
         for (char s : string) {
             ascii = (int) s;
-            ascii -= 4;
+            if (ascii > 36) {
+                ascii -= 4;
+            }
             ascii_c = (char) ascii;
             string[count] = ascii_c;
             count++;
@@ -35,7 +37,22 @@ public class CodificaSplit implements Codifica {
 
     @Override
     public String decodifica(String str) {
-        // TODO Auto-generated method stub
-        return null;
+        char[] string = str.toCharArray();
+        int ascii = 0;
+        int count = 0;
+        char ascii_c = 'a';
+
+        for (char s : string) {
+            ascii = (int) s;
+            if (ascii > 36) {
+                ascii += 4;
+            }
+            ascii_c = (char) ascii;
+            string[count] = ascii_c;
+            count++;
+
+        }
+        String codificado = new String(string);
+        return codificado;
     }
 }

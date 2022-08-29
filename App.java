@@ -15,24 +15,24 @@ public class App {
         System.out.println("Frase original: " + frase);
         String codificada = cod.codifica(frase);
         System.out.println("Frase codificada: " + codificada);
-        String decodificada = cod.decodifica(codificada);
-        System.out.println("Frase decodificada: " + decodificada);
+        // String decodificada = cod.decodifica(codificada);
+        // System.out.println("Frase decodificada: " + decodificada);
         System.out.println("----------------------------------");
     }
 
     public static void main(String args[]) {
         Path filesPath = Paths.get("..", "Codificadores");
-        System.out.println("Pasta:"+filesPath.getFileName());
+        System.out.println("Pasta:" + filesPath.getFileName());
         List<String> codificadores = null;
 
         try (Stream<Path> walk = Files.walk(filesPath)) {
             codificadores = walk
-                .map(x -> x.getFileName())
-                .map(x -> x.toString())
-                .filter(f -> !f.endsWith("Codifica.java"))
-                .filter(f -> f.endsWith(".java"))
-                .map(s -> s.toString().substring(0, s.lastIndexOf('.')))
-                .collect(Collectors.toList());
+                    .map(x -> x.getFileName())
+                    .map(x -> x.toString())
+                    .filter(f -> !f.endsWith("Codifica.java"))
+                    .filter(f -> f.endsWith(".java"))
+                    .map(s -> s.toString().substring(0, s.lastIndexOf('.')))
+                    .collect(Collectors.toList());
 
             codificadores.forEach(fn -> System.out.println(fn));
 
