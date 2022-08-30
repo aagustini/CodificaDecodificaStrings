@@ -23,7 +23,7 @@ public class CodificaSplit implements Codifica {
 
         for (char s : string) {
             ascii = (int) s;
-            if (ascii > 36) {
+            if (ascii > 36 || ascii < 127) {
                 ascii -= 4;
             }
             ascii_c = (char) ascii;
