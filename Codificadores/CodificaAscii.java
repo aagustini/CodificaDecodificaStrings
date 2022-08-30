@@ -1,6 +1,6 @@
 package Codificadores;
 
-public class CodificaSplit implements Codifica {
+public class CodificaAscii implements Codifica {
 
     @Override
     public String getNomeAutor() {
@@ -44,7 +44,7 @@ public class CodificaSplit implements Codifica {
 
         for (char s : string) {
             ascii = (int) s;
-            if (ascii > 36) {
+            if (ascii > 36 || ascii < 127) {
                 ascii += 4;
             }
             ascii_c = (char) ascii;
