@@ -41,7 +41,7 @@ public class App {
             return;
         }
 
-        String frase = "Tarefa 2 contribucaoo em projetos publicos no GitHub.";
+        String frase = "Tarefa 2: @#$ contribucaoo em projetos publicos no GitHub.";
         try {
             for (String cod : codificadores) {
                 Class<?> clazz = Class.forName("Codificadores." + cod);
